@@ -18,8 +18,8 @@ This container can be built using:
 
 For an elasticsearch container named "elasticsearch", this container can be run using:
 
-      docker run -p 80:80 -e ES=<elastic host> balsamiq/docker-kibana
+      docker run -p 80:80 -e ES=<elastic host> geldim/docker-kibana
 
 To run locally (without ssl offloading on an elb) you need to set SSL_REDIRECT to false as follows:
 
-      docker run -p 80:80 -e KIBANA_SECURE=false -e ES=<elastic host> balsamiq/docker-kibana
+      docker run -p 80:80 -e KIBANA_SECURE=false -e ES=<elastic host> geldim/docker-kibana
