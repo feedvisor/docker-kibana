@@ -14,12 +14,12 @@ This container requires a link to an elasticsearch container using the "es" alia
 
 This container can be built using:
 
-      docker build -t feedvisor/docker-kibana .
+      docker build -t balsamiq/docker-kibana .
 
 For an elasticsearch container named "elasticsearch", this container can be run using:
 
-      docker run -p 80:80 -e ES=<elasticsearch host> feedvisor/docker-kibana
+      docker run -p 80:80 --link elasticsearch:es balsamiq/docker-kibana
 
 To run locally (without ssl offloading on an elb) you need to set SSL_REDIRECT to false as follows:
 
-      docker run -p 80:80 -e KIBANA_SECURE=false -e ES=<elasticsearch host> feedvisor/docker-kibana
+      docker run -p 80:80 -e KIBANA_SECURE=false --link elasticsearch:es balsamiq/docker-kibana
